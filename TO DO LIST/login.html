@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            color: azure;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .mainbox {
+            backdrop-filter: blur(10px);
+            height: 400px;
+            width: 330px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 6%;
+            margin-bottom: 6%;
+            border: 1px solid rgb(172, 162, 162);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .em {
+            background: transparent;
+            width: 70%;
+            border: none;
+            border-bottom: 2px solid white;
+            color: azure;
+            font-size: 18px;
+            padding-bottom: 10px;
+            margin-bottom: 35px;
+
+        }
+
+        ::placeholder {
+            color: grey;
+            font-size: 18px;
+        }
+        h1{
+            text-align: center; 
+            color: whitesmoke; 
+            margin-top: 40px; 
+            margin-bottom: 50px;
+        }
+        #sub{
+            margin-top: 20px; 
+            width: 180px; 
+            height: 30px; 
+            color: black; 
+            border-radius: 50px; 
+            font-size: 18px;
+        }
+
+        #theme{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px; 
+            width: 250px; 
+            height: 30px; 
+        }
+        #theme button{
+            color: black; 
+            border-radius: 50px; 
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var ts = 0;
+        function themec(ts){
+            console.log(ts)
+            if(ts==0){
+                var a = document.getElementById("theme1")
+                a.style.backgroundColor = "black";
+                a.style.color = "white";
+
+                var b = document.getElementById("mail")
+                document.body.style.backgroundColor="white";
+                document.getElementById("heading").style.color="black"
+                b.style.color="black"
+                b.style.borderColor="black"
+
+                var c = document.getElementById("pass")
+                c.style.color="black"
+                c.style.borderColor="black"
+
+
+
+                document.getElementById("reg").style.color="black"
+                document.getElementById("dacc").style.color="black"
+                var ts = ts+1;
+                console.log(ts)
+            }
+            else if(ts==1){
+                var a = document.getElementById("theme1")
+                a.style.backgroundColor = "white";
+                a.style.color = "black";
+
+                var b = document.getElementById("mail")
+                document.body.style.backgroundColor="black";
+                document.getElementById("heading").style.color="white"
+                b.style.color="white"
+                b.style.borderColor="white"
+
+                var c = document.getElementById("pass")
+                c.style.color="white"
+                c.style.borderColor="white"
+
+                document.getElementById("reg").style.color="white"
+                document.getElementById("dacc").style.color="white"
+                var ts = ts-1;
+                console.log(ts)
+            }
+            return ts;
+
+        }
+    </script>
+    <div class="mainbox">
+        <form action="notelog.html">
+            <h1 id="heading">Login</h1>
+            <input type="email" id="mail" placeholder="Email" name="Email" class="em" required>
+            <input type="password" id="pass" placeholder="Password" name="Pass" value="" class="em" required minlength="5">
+            <br>
+           
+            <button type="submit"  class="sub1"id="sub"> <a href="homepage.html">login</button></a>
+            <br>
+            <p id="dacc">Don't have an account <a id="reg" href="signup.html">register</a></p>
+        </form>
+    </div>
+    <div id="theme">
+        <button onclick="ts=themec(ts)" id="theme1">Click here To Change Theme</button>
+    </div>
+</body>
+
+</html>
